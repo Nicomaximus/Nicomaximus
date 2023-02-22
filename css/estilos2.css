@@ -1,0 +1,60 @@
+/** esto es una propiedad general
+*/
+
+* {
+    color: blue;
+}
+
+/** propiedades para elementos p, parrafos
+*/
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    width: 300px;
+}
+
+/**
+propiedades para elementos h1
+*/
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid black;
+    margin-top: 40px;
+    margin-left: 25px;
+    margin-bottom: 35px;
+    margin-right: 25px;
+    padding: 20px 35px 25px 40px;
+    font-weight:  bold;
+    color: gray;
+
+}
+
+/** secciones
+*/
+
+section {
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+}
+
+/** propiedades selectivas
+*/
+
+#saludo_1 {
+    color: black;
+    font-size: 25px;
+    border: 1px solid;
+} 
+
+.estaesmiclase {
+    font-weight: bold;
+    color: aquamarine;
+}
+
+section h1 {
+    font-size: 50px;
+}
