@@ -1,0 +1,20 @@
+*{
+   background-color: blueviolet;
+}
+
+
+#titulo1 {
+    background-color: blue;
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    border: solid;
+    background-color: chartreuse;
+}
+
+body {
+    style = "font-size: larger;"
+}
+
