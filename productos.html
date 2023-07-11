@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <title>Padel Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://img.freepik.com/vector-premium/ilustracion-vector-pelota-tenis_110233-658.jpg?w=2000" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+          <a href=""> <img width="60px" height="60px" src="https://media.istockphoto.com/id/472295761/es/vector/paleta-coinciden-con-raquetas-y-pelotas-de.jpg?s=170667a&w=0&k=20&c=HLMPDW-xrA22cuQn44bvDnJPDe0Z74bTrIh3i-IZoYo=" alt="Logo"></a>
+          <a href="" button type="button" class="btn btn-primary"></button>Home</a>
+          <a href="" button type="button" class="btn btn-primary"></button>Nosotros</a>
+          <a href="" button type="button" class="btn btn-primary"></button>Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <div id="app" class="container">
+            <h1>Padel Store</h1>
+            <br>
+            <h2>Productos</h2>
+            <br>
+            <a  class="btn btn-outline-primary" href="producto_nuevo.html">Nuevo</a>
+            <br><br>
+            <div v-if="error">
+                <p>Lo sentimos , ........</p>
+            </div>
+            <div v-else>
+                <section v-if="cargando">
+                    <div class="spinner-border"></div>
+                    <p>Cargando .....</p>
+                </section>
+                <section v-else>
+                     <div class="table-responsive"> 
+                        
+                         <table class="table table-bordered">
+                            <thead class>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Stock</th>
+                                    <th scope="col">Imagen</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead> 
+                            <tbody>
+                                <tr class=""  v-for="producto in productos">
+                                    <td scope="row">{{producto.id}}</td>
+                                    <td>{{producto.nombre}}</td>
+                                    <td>{{producto.precio}}</td>
+                                    <td>{{producto.stock}}</td>
+                                    <td>
+                                        <img width="60"  :src="producto.imagen" :alt="producto.nombre">
+                                    </td>
+                                    <td>
+                    			<a class="btn btn-outline-primary" :href="'producto_update.html?id='+ producto.id">Editar</a>
+                                      <button type="button" class="btn btn-outline-primary" v-on:click="eliminar(producto.id)">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <scope>
+            <a href=""><img src="https://wwwhatsnew.com/wp-content/uploads/2013/01/twitter.png" width="30px" height="30px" alt=""></a>
+            <a href=""><img src="https://img.freepik.com/iconos-gratis/instagram_318-566741.jpg" width="30px" height="30px" alt=""></a>
+            <a href=""><img src="https://img1.freepng.es/20180319/iyw/kisspng-facebook-logo-social-media-computer-icons-icon-facebook-drawing-5ab02fb69f99c4.9538101315214959906537.jpg" width="30px" height="30px" alt=""></a>
+            <a href=""><img src="https://static.vecteezy.com/system/resources/previews/016/716/480/original/whatsapp-icon-free-png.png" width="30px" height="30px" alt=""></a>
+                   
+        </scope>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+    <script src="./js/productos.js"></script>
+    
+</body>
+</html>
